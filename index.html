@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorBox"></div>
+    <button onclick="generateColor()">Generate Color</button>
+
+    <script>
+        function generateColor() {
+            var colorBox = document.getElementById("colorBox");
+            var color = generateRandomColor();
+            colorBox.style.backgroundColor = color;
+            colorBox.textContent = color;
+        }
+
+        function generateRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
